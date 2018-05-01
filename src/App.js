@@ -1,23 +1,32 @@
 // @flow
 
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Home from './Home';
+import Park from './Park';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/park">Park</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/park" component={Park} />
+      </Switch>
+    </main>
+  </div>
+);
 
 export default App;
