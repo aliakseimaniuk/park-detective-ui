@@ -4,8 +4,8 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const Park = () => (
-  <Query query={PARK_QUERY} variables={{ parkId: '1' }}>
+const Park = props => (
+  <Query query={PARK_QUERY} variables={{ parkId: props.match.params.id }}>
     {({ loading, error, data }) => {
       if (loading) return <div>Loading...</div>;
       if (error) return <div>Error: {error}</div>;
