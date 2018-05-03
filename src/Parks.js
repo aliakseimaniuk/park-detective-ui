@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const Home = () => (
+const Parks = () => (
   <Query query={ALL_PARKS_QUERY}>
     {({ loading, error, data }) => {
       if (loading) return <div>Loading...</div>;
@@ -13,7 +13,6 @@ const Home = () => (
 
       return (
         <div>
-          Home
           {data.parks.map(p => (
             <div key={p.id}>
               <div>{p.id}</div>
@@ -41,4 +40,4 @@ const ALL_PARKS_QUERY = gql`
   }
 `;
 
-export default Home;
+export default Parks;
