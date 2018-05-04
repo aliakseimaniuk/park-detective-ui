@@ -37,8 +37,6 @@ const PARK_QUERY = gql`
         latitude
         longitude
       }
-      genre
-      activity
     }
   }
 `;

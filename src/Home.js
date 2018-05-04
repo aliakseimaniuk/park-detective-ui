@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import SearchContainer from './components/home/SearchContainer';
+import PopularCategories from './components/home/PopularCategories';
 
 const Home = () => (
   <Query query={ALL_PARKS_QUERY}>
@@ -13,7 +15,8 @@ const Home = () => (
 
       return (
         <div>
-          Home
+          <SearchContainer />
+          <PopularCategories />
           {data.parks.map(p => (
             <div key={p.id}>
               <div>{p.id}</div>

@@ -12,7 +12,7 @@ const Footer = props => (
         <div className="col-md-5 col-sm-6">
           <img
             className="footer-logo"
-            src="images/logo.png"
+            src="/images/logo.png"
             alt="Park Detective"
           />
           <br />
